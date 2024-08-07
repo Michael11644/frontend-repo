@@ -1,6 +1,8 @@
+// src/components/EmployeeList.jsx
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchEmployees } from '../store/actions/employeesActions';
+import { Link } from 'react-router-dom';
 
 const EmployeeList = () => {
   const dispatch = useDispatch();
@@ -16,6 +18,7 @@ const EmployeeList = () => {
   return (
     <div>
       <h1>Employees</h1>
+      <Link to="/"><button>Back to Home</button></Link>
       <ul>
         {employees.map((employee) => (
           <li key={employee.id}>
@@ -28,3 +31,4 @@ const EmployeeList = () => {
 };
 
 export default EmployeeList;
+
